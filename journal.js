@@ -19,7 +19,7 @@ let continueProgram = 'yes';
 while (continueProgram === 'yes') {
 	let list = Number(
 		prompt(
-			'Choose (1) for listing all the entries\n Choose (2) for adding a new entry\n Choose (3) for quit\n Choose (4) to delete the last entry'
+			'Choose (1) for listing all the entries\n Choose (2) for adding a new entry\n Choose (3) for quit\n Choose (4) to delete the last entry in the array'
 		)
 	);
 	if (list === 1) {
@@ -30,12 +30,12 @@ while (continueProgram === 'yes') {
 		title = prompt("Enter your new Journal title");
 		content = prompt("Enter your new Journal content");
 		let newEntry = {
-			Title: title,
-			Content: content
+			title: title,
+			content: content
 		}
-		let Jouranl = Journal.push(newEntry);
+		Journal.push(newEntry);
 	} else if (list === 4) {
-		Jouranl.pop(Jouranl[""]);
+		Jouranl.pop(Jouranl[Journal.length -1]);
 	}
 	continueProgram = prompt('Do you want to run the program again? (yes, no)');
 }
